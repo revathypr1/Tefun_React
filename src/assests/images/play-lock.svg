@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31.805" height="31.805" viewBox="0 0 31.805 31.805">
+  <g id="Icon_feather-play-circle" data-name="Icon feather-play-circle" transform="translate(1 1)">
+    <path id="Path_55" data-name="Path 55" d="M32.8,17.9A14.9,14.9,0,1,1,17.9,3,14.9,14.9,0,0,1,32.8,17.9Z" transform="translate(-3 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    <path id="padlock" d="M12.4,4.9h-.451V3.267A3.435,3.435,0,0,0,8.372,0,3.435,3.435,0,0,0,4.791,3.267V4.9H4.344A1.29,1.29,0,0,0,3,6.127v5.719a1.29,1.29,0,0,0,1.344,1.226H12.4a1.29,1.29,0,0,0,1.344-1.226V6.127A1.29,1.29,0,0,0,12.4,4.9ZM5.984,3.267A2.29,2.29,0,0,1,8.372,1.089a2.29,2.29,0,0,1,2.387,2.178V4.9H5.984Z" transform="translate(6.225 7.807)" fill="#fff
+    "/>
+  </g>
+</svg>
