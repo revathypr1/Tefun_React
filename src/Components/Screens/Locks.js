@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import screen from "../../assests/images/Lockscreen.svg";
+import { Link } from "react-router-dom";
 export default function () {
   return (
     <div>
@@ -13,7 +14,7 @@ export default function () {
           Please complete your lessons as soon as possible to unlock your
           examination.
         </Paragraph>
-        <Button>Go To dashBoards</Button>
+        <Button link to ="/video-date">Go To dashBoards</Button>
       </MainDiv>
     </div>
   );
@@ -27,6 +28,18 @@ const ImgDiv = styled.div`
   width: 50%;
   padding-top: 30%;
   margin: 0 auto;
+
+  @media all and (max-width: 768px){
+    padding-top: 37%;
+  }
+  @media all and (max-width: 640px){
+    padding-top: 58%;
+  }
+  @media all and (max-width: 420px){
+    padding-top: 95%;
+    width: 65%;
+  
+  }
 `;
 const Img = styled.img`
   width: 100%;
@@ -37,6 +50,10 @@ const Heading = styled.h1`
   font-weight: 600;
   text-align: center;
   margin-top: -41px;
+
+  @media all and (max-width: 420px){
+    margin-top: 15px;
+  }
 `;
 const Paragraph = styled.p`
   font-size: 15px;
@@ -49,8 +66,11 @@ const Paragraph = styled.p`
   text-align: center;
   margin-top: 11px;
   margin-bottom: 20px;
+  @media all and (max-width: 640px){
+    width: 92%;
+  }
 `;
-const Button = styled.button`
+const Button = styled(Link)`
   background: linear-gradient(
     to right,
     rgb(99, 187, 76) 0%,

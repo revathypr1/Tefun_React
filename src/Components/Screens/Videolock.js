@@ -5,6 +5,8 @@ import small from "../../assests/images/small.svg";
 import Ig from "../../assests/images/640.svg";
 import Drop from "../../assests/images/down-arrow.svg";
 import PlayImage from "../../assests/images/play-lock.svg";
+import "../../App.css";
+import ScreenHeader from "../includes/ScreenHeader";
 
 export default function Videos() {
   const [selectedId, setSelectedId] = useState("");
@@ -116,7 +118,7 @@ export default function Videos() {
             <Overlay>
               <DivContain>
                 <DivLock>
-                  <Lock src={PlayImage}  alt="images"/>
+                  <Lock src={PlayImage} alt="images" />
                 </DivLock>
                 <DivParagraph>
                   <Heading>This video is Locked</Heading>
@@ -125,7 +127,7 @@ export default function Videos() {
                   </Sentence>
                   <Button>Go to Lessons</Button>
                 </DivParagraph>
-            </DivContain>
+              </DivContain>
             </Overlay>
           </DivImage>
           <DivItem>
@@ -184,24 +186,49 @@ const MainDiv = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding-top: 105px;
+  @media all and (max-width: 768px){
+    flex-wrap:wrap;
+  }
 `;
 const DivLeft = styled.div`
   width: 70%;
+  @media all and (max-width: 768px){
+   width: 100%;
+  }
 `;
 const DivImage = styled.div`
   width: 85%;
   position: relative;
+  @media all and (max-width: 786px){
+    width: 98%;
+  }
 `;
 const Overlay = styled.div`
   position: absolute;
   top: 10px;
-  left: 16px;
+  left: 23px;
   width: 94%;
   height: 93%;
   background-color: #00000999;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media all and (max-width: 1081px){
+    left: 19px;
+  }
+  @media all and (max-width: 980px){
+    top: 7px;
+    left: 13px;
+  }
+  @media all and (max-width: 769px){
+    
+    left: 20px;
+  }
+  @media all and (max-width: 360px){
+    
+    left: 9px;
+  }
 `;
 const Img = styled.img`
   width: 100%;
@@ -215,11 +242,17 @@ const DivItemOne = styled.div``;
 const H1 = styled.h1`
   font-size: 16px;
   color: rgba(21, 35, 46, 0.49);
+  @media all and (max-width: 420px){
+    font-size: 14px;
+  }
 `;
 const H2 = styled.h2`
   margin-top: 15px;
   font-weight: 600;
   margin-bottom: 48px;
+  @media all and (max-width: 420px){
+    font-size: 21px;
+  }
 `;
 const DivItemTwo = styled.div`
   cursor: pointer;
@@ -235,36 +268,90 @@ const DivItemTwo = styled.div`
   width: 23%;
   height: 15%;
   margin-right: 220px;
+  @media all and (max-width: 980px){
+    margin-right: 139px;
+  }
+  @media all and (max-width: 640px){
+    margin-right: 49px;
+    width: 33%;
+  }
+  @media all and (max-width: 420px){
+    width: 44%;
+  }
+
 `;
 const P = styled.p`
   color: rgb(255, 255, 255);
   font-size: 18px;
   padding-left: 22px;
+  @media all and (max-width: 1280px){
+    padding-left: 0;
+  }
+  @media all and (max-width: 1080px){
+    font-size: 17px;
+  }
+  @media all and (max-width: 980px){
+    font-size: 13px;
+  }
 `;
 const DivPic = styled.div`
   width: 85%;
+  @media all  and (max-width: 768px){
+    position: relative;
+  }
 `;
 const Pic = styled.img`
   width: 100%;
   display: block;
+  @media all  and (max-width: 768px){
+  
+  position: absolute;
+  top:179px;
+}
 `;
 const DivPicone = styled.div`
   width: 85%;
   margin-top: 22px;
   height: 108px;
+  @media all  and (max-width: 768px){
+  position: relative;
+  }
 `;
 const Picone = styled.img`
   width: 100%;
   display: block;
   height: 100%;
   object-fit: cover;
+
+  @media all  and (max-width: 768px){
+  
+  position: absolute;
+  bottom: -197px;
+  height: 53%;
+  
+}
 `;
 const DivRight = styled.div`
   width: 30%;
   padding-top: 20px;
+  @media all and (max-width: 768px){
+    width: 86%;
+   
+  
+    position: relative;
+  
+  }
 `;
 const Ul = styled.ul`
   width: 100%;
+  @media all and (max-width: 1081px){
+    width: 96%;
+  }
+  @media all  and (max-width: 768px){
+    width: 88%;
+    position: absolute;
+    top:-157px;
+  }
 `;
 const Li = styled.li`
   width: 100%;
@@ -330,9 +417,15 @@ const DivLock = styled.div`
   display: block;
 `;
 const Lock = styled.img`
-width: 15%;
-margin-left:157px;
+  width: 15%;
+  margin-left: 157px;
 
+  @media all and (max-width: 768px){
+    width: 8%;
+  }
+  @media all and (max-width: 420px){
+    margin-left: 136px;
+  }
 `;
 const DivParagraph = styled.div``;
 const Heading = styled.h1`
@@ -340,6 +433,9 @@ const Heading = styled.h1`
   font-weight: 700;
   text-align: center;
   color: #fff;
+  @media all and (max-width: 420px){
+    font-size: 17px;
+  }
 `;
 
 const Sentence = styled.p`
@@ -347,6 +443,9 @@ const Sentence = styled.p`
   color: #ffffff82;
   width: 80%;
   text-align: center;
+  @media all and (max-width: 420px){
+    font-size: 13px;
+  }
 `;
 const Button = styled.button`
   background: linear-gradient(
@@ -364,8 +463,15 @@ const Button = styled.button`
   margin: 0 auto;
   margin-top: 18px;
   display: block;
-    margin-left: 79px;
+  margin-left: 79px;
   text-align: center;
   padding: 12px;
+
+  @media all and (max-width: 1080px){
+    margin-left: 96px;
+  }
+  @media all and (max-width: 420px){
+    width: 119px;
+  }
 `;
-const DivContain=styled.div``;
+const DivContain = styled.div``;

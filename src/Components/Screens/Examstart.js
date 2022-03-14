@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Time from "./Time";
+import "./../../App.css";
+import Congrats from "../includes/modal/Congrats";
 
 export default function () {
+
+  const [completed, setCompleted] = useState(false);
   return (
     <div>
       <Time/>
       <Main>
+      {
+            completed ? <Congrats/> : ""
+          }
         <Left>
           <Div>
             <SpanNum></SpanNum>
@@ -76,7 +83,7 @@ export default function () {
               
             </Li>
           </Boxes>
-          <Button>Next</Button>
+          <Button onClick={()=>setCompleted(true)} >Next</Button>
         </Right>
       </Main>
     </div>
@@ -121,6 +128,14 @@ const Small = styled.div`
   font-size: 20px;
   font-weight: 700;
   position: relative;
+  @media all and (max-width: 360px){
+    top: -22px;
+    left: -23px;
+  }
+  @media all and (max-width: 420px){
+   font-size:17px;
+  }
+
   /* &::after{
         content: "";
     position: absolute;
@@ -181,16 +196,33 @@ const SpanTwo = styled.span`
   ;
 `;
 const Right = styled.div`
-
+@media all and (max-width: 640px){
+   
+    width: 70%;
+}
 `;
 const P = styled.p`
 font-size: 16px;
     width: 70%;
     color: #707387;
     margin-bottom: 20px;
+  @media all and (max-width: 640px){
+    font-size: 13px;
+    width: 82%;
+
+  }
+  @media all and (max-width: 420px){
+    
+    width: 86%;
+
+  }
    
 `;
-const Boxes = styled.ul``;
+const Boxes = styled.ul`
+ @media all and (max-width:640px){
+  width: 100%;
+  }
+`;
 const Li = styled.li``;
 const DivItem = styled.div`
   display: flex;
@@ -204,7 +236,16 @@ const DivItem = styled.div`
     margin-bottom: 16px;
     outline: none;
     border-radius: 5px;
+
+    @media all and (max-width:640px){
+      width: 93%;
+    }
+
+    @media all and (max-width:420px){
+      width: 93%;
+    }
 `;
+
 const DivLeft = styled.div`
     margin-right: 19px;
     margin-left: 14px;
@@ -243,6 +284,16 @@ const Button = styled.button`
   padding: 12px;
   margin-left: 455px;
   margin-top: 34px;
+
+  @media all and (max-width:640px){
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  @media all and (max-width:980px){
+    
+    margin-left: 0;
+  }
 `;
 
 

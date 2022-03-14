@@ -14,10 +14,12 @@ import SS from "../../assests/images/vvg.svg";
 import UU from "../../assests/images/uu.svg";
 import Icon from "../../assests/images/Icon feather-arrow-right.svg";
 import Main from "../../assests/images/main-banner.png";
+import { Link } from "react-router-dom";
 
 export default function () {
   return (
     <div>
+      <MainContainer>
       <MainDiv>
         <DivItem>
           <Img src={channel} alt="images" />
@@ -41,17 +43,20 @@ export default function () {
             <ImgTen src={UU} alt="images" />
           </DivContainer>
         </DivPicture>
-        <DivButton>
-          <Button>Start Learning</Button>
+        <DivButton link to ="/chooseprofile">
+          <Button >Start Learning</Button>
           <ArrowDiv>
             <Gallery src={Icon} alt="images" />
           </ArrowDiv>
         </DivButton>
       </MainDiv>
+      </MainContainer>
     </div>
   );
 }
-
+const MainContainer=styled.div`
+padding-top:120px;;
+`;
 const MainDiv = styled.div`
   background-image: url(${Main});
   background-position: 200%;
@@ -96,48 +101,181 @@ const DivContainer = styled.div`
   flex-wrap: wrap;
   width: 63%;
   margin: 0 auto; ;
+
+  @media all and (max-width: 1081px){
+    width: 70%;
+  }
+  @media all and (max-width: 980px){
+    width: 89%;
+  }
+  @media all and (max-width: 768px){
+    width: 97%;
+  }
+  @media all and (max-width: 640px){
+   width: 425px;
+  }
+  @media all and (max-width: 420px){
+   width: 371px;
+  }
+  @media all and (max-width: 360px){
+   width: 328px;
+  }
 `;
 const ImgOne = styled.img`
   height: 70px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:57px;
+  }
+  @media all and (max-width: 640px){
+    height:44px;
+  }
+  @media all and (max-width: 420px){
+    height:37px;
+  }
+  @media all and (max-width: 360px){
+    height:30px;
+  }
 `;
 const ImgTwo = styled.img`
   height: 70px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:57px;
+  }
+  @media all and (max-width: 640px){
+    height:44px;
+  }
+  @media all and (max-width: 420px){
+    height:37px;
+  }
+  @media all and (max-width: 360px){
+    height:30px;
+  }
 `;
 const ImgThree = styled.img`
   height: 70px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:57px;
+  }
+  @media all and (max-width: 640px){
+    height:44px;
+  }
+  @media all and (max-width: 420px){
+    height:37px;
+  }
+  @media all and (max-width: 360px){
+    height:30px;
+  }
 `;
 const ImgFour = styled.img`
   height: 62px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:57px;
+  }
+  @media all and (max-width: 640px){
+    height:44px;
+  }
+  @media all and (max-width: 420px){
+    height:37px;
+  }
+  @media all and (max-width: 360px){
+    height:30px;
+  }
 `;
 const ImgFive = styled.img`
   height: 62px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:57px;
+  }
+  @media all and (max-width: 640px){
+    height:44px;
+  }
+  @media all and (max-width: 420px){
+    height:37px;
+  }
+  @media all and (max-width: 360px){
+    height:30px;
+  }
 `;
 const ImgSix = styled.img`
   height: 48px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:39px;
+  }
+  @media all and (max-width: 640px){
+    height:36px;
+  }
+  @media all and (max-width: 420px){
+    height:27px;
+  }
+  @media all and (max-width: 360px){
+    height:23px;
+  }
 `;
 const ImgSeven = styled.img`
   height: 62px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:58px;
+  }
+  @media all and (max-width: 640px){
+    height:44px;
+  }
+  @media all and (max-width: 420px){
+    height:37px;
+  }
+  @media all and (max-width: 360px){
+    height:30px;
+  }
 `;
 const ImgEight = styled.img`
   height: 40px;
   margin-right: 12px;
+  @media all and (max-width: 768px){
+    height:39px;
+  }
+  @media all and (max-width: 640px){
+    height:36px;
+  }
+  @media all and (max-width: 420px){
+    height:29px;
+  }
+  @media all and (max-width: 360px){
+    height:24px;
+  }
 `;
 const Imgnine = styled.img`
   height: 53px;
   margin-right: 12px;
+  @media all and (max-width: 640px){
+    height:44px;
+  }
+  @media all and (max-width: 420px){
+    height:37px;
+  }
+  @media all and (max-width: 360px){
+    height:28px;
+  }
 `;
 const ImgTen = styled.img`
   height: 40px;
   margin-right: 12px;
+  @media all and (max-width: 640px){
+    height:33px;
+  }
+  @media all and (max-width: 420px){
+    height:29px;
+  }
+  @media all and (max-width: 360px){
+    height:20px;
+  }
 `;
-const DivButton = styled.div`
+const DivButton = styled(Link)`
   display: flex;
   padding-top: 22px;
 `;
@@ -162,13 +300,30 @@ const Button = styled.button`
     rgb(24, 152, 175) 51%,
     rgb(99, 187, 76) 100%
   );
+  @media all and (max-width: 420px){
+    font-size: 15px;
+  }
 `;
 const ArrowDiv = styled.div`
   width: 1%;
+  @media all and (max-width: 1280px){
+    width: 2%;
+  }
+  @media all and (max-width: 980px){
+    display: none;
+  }
 `;
 const Gallery = styled.img`
   width: 100%;
   display: block;
   margin-left: -579px;
   margin-top: 19px;
+  @media all and (max-width: 1280px){
+    margin-left: -468px;
+margin-top: 16px;
+  }
+  @media all and (max-width: 1080px){
+    margin-left: -421px;
+    margin-top: 16px;
+}
 `;

@@ -15,47 +15,45 @@ import Footer from './Components/Screens/Footer';
 import Videos from './Components/Screens/Videos';
 import Details from './Components/Screens/Details';
 import Landing from './Components/Screens/Landing';
-import Hurrypop from './Components/Screens/Hurrypop';
-import Congrats from './Components/Screens/Congrats';
+import Hurrypop from './Components/includes/modal/Hurrypop';
+import Congrats from './Components/includes/modal/Congrats';
 import Locks from './Components/Screens/Locks';
 import Tefunexam from './Components/Screens/Tefunexam';
 import Chooseprofile from './Components/Screens/Chooseprofile';
 import Examstart from './Components/Screens/Examstart';
 import Time from './Components/Screens/Time';
 import Videolock  from './Components/Screens/Videolock'
+import { BrowserRouter as Router,Route } from "react-router-dom"
+import MainRouter  from './Components/routes/MainRouter';
+import Videoannouced from './Components/Screens/Videoannouced';
+import Videodate from './Components/Screens/Videodate'
+import Videologout from './Components/Screens/Videologout'
+import Welcome from './Components/includes/modal/Welcome';
+// import Congrats from './Components/includes/modal/Congrats';
+// import Hurrypop from './Components/includes/modal/Hurrypop';
+import ScreenHeader from './Components/includes/ScreenHeader';
+import LogoutForm from './Components/includes/LogoutForm';
 
 function App() {
   return (
     <>
-    {/* <Header/> */}
-    <div className='wrapper' >
-      
-      {/* <Spotlight/> */}
-     {/* <Story/> */}
-     {/* <Campus/>
-     <Gallery/>
-     <Certificate/>
-     <Joins/>
-     <Students/>
-     <Mobile/>
-     <Questions/> */}
-     {/* <Videos/> */}
-     {/* <Hurrypop/> */}
-     {/* <Congrats/> */}
-     {/* <Locks/> */}
-     {/* <Tefunexam/> */}
-     
-    {/* <Examstart/> */}
-     {/* <Chooseprofile/> */}
-     {/* <Videolock/> */}
-    </div>
-    
-    {/* <Footer/> */}
-    <Details/>
-    {/* <Landing/> */}
-    {/* <Time/> */}
-  </>
+    <Router>
+      <MainRouter/>
+    </Router>
+    {/* <Details/> */}
+    {/* <Welcome/>
+    <Videoannouced/>
+    <Videodate/>
+   <Videologout/> 
+   <Hurrypop/>
+   <Congrats/> */}
+   {/* <Videos/> */}
+   {/* <LogoutForm/> */}
+   
+   
+    </>
   )};
+
 
 export default App;
 

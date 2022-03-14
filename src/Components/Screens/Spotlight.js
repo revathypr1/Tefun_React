@@ -1,12 +1,16 @@
-import React from "react";
+import {React,useState} from "react";
 import styled from "styled-components";
 import Item from "../../assests/images/640.svg";
 import Min from "../../assests/images/spot-min.jpeg";
 import arrow from "../../assests/images/arrow.svg";
 import play from "../../assests/images/grey-and-play.svg";
 import Fun from "../../assests/images/Tefun-logo.svg";
+import { Link } from "react-router-dom";
+import JoinForm from "../includes/JoinForm";
 
-export default function Spotlight() {
+export default function Spotlight({menuIconClick, setMenuIconClick}) {
+  
+  
   return (
     <div>
       <MainContainer>
@@ -17,7 +21,8 @@ export default function Spotlight() {
             </Piccontainer>
             <H2>Technology Fundamental Program</H2>
             <H3>
-              കേരളത്തിലെ <Span>20 ലക്ഷം</Span>  കുട്ടികൾക്ക് E-സാക്ഷരത ഉറപ്പുവരുത്താ
+              കേരളത്തിലെ <Span>20 ലക്ഷം</Span> കുട്ടികൾക്ക് E-സാക്ഷരത
+              ഉറപ്പുവരുത്താ
             </H3>
             <P>
               ഇത് Industry 4.0 കാലഘട്ടം, ടെക്ക്‌നോളജിയുടെ പുത്തൻ സാധ്യതകൾ ഇനി
@@ -29,13 +34,17 @@ export default function Spotlight() {
               <Imgone src={Item} alt="images" />
             </Divitem>
             <Largediv>
-              <Divlist>
-                <Button className="btn">join for now</Button>
+              <Divlist to ="/">
+                <Button onClick={() => {
+                setMenuIconClick((menuIconClick) => !menuIconClick);
+              }}>
+                Join for now</Button>
               </Divlist>
               <Divlistone>
-                <Divbutton>
-                  <Small>Are you a school</Small>
-                  Enquire now
+                <Divbutton to="/">
+                  <Small>
+                    Are you a Campus <Span>Register now</Span>{" "}
+                  </Small>
                 </Divbutton>
               </Divlistone>
             </Largediv>
@@ -47,10 +56,11 @@ export default function Spotlight() {
             <Pic src={arrow} alt="arrow" />
             <Googlediv>
               <Google src={play} alt="play" />
-              <Google src={play} alt="play" />
+              <Google className="playstore" src={play} alt="play" />
             </Googlediv>
           </Rightdiv>
         </Spotlightmain>
+        <JoinForm  menuIconClick={menuIconClick} setMenuIconClick={setMenuIconClick}/>
       </MainContainer>
     </div>
   );
@@ -59,6 +69,11 @@ const MainContainer = styled.div`
   margin: 0px auto 0px;
   padding-bottom: 80px;
   position: relative;
+  margin-top: 50px;
+
+  @media all and (max-width: 420px){
+    margin-top: -9px;
+  }
 `;
 const Spotlightmain = styled.div`
   width: 90%;
@@ -74,26 +89,72 @@ const Spotlightmain = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 5%;
+
+  @media all and (max-width:1280px){
+    width:80%;
+  }
+  @media all and (max-width:980px){
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  @media all and (max-width:768px){
+    width:95%;
+    margin: 0 auto;
+  }
+  @media all and (max-width:640px){
+    width:100%;
+  }
 `;
 const Leftdiv = styled.div`
   margin-bottom: 20px;
-  width:48%;
+  width: 48%;
 `;
-const Piccontainer = styled.div``;
-const Tefun = styled.img``;
+const Piccontainer = styled.div`
+  width: 43%;
+`;
+const Tefun = styled.img`
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+`;
 const H2 = styled.h2`
   font-size: 22px;
   margin-bottom: 20px;
+
+  @media all and (max-width:980px){
+    width: 141%;
+    font-size: 21px;
+  }
+  @media all and (max-width:640px){
+  width: 190%;
+    font-size: 19px;
+  }
 `;
 const H3 = styled.h3`
-font-size: 33px;
-    font-weight: 700;
-    margin-bottom: 30px;
-  
+  font-size: 33px;
+  font-weight: 700;
   margin-bottom: 30px;
+  width: 99%;
+  margin-bottom: 30px;
+
+  @media all and (max-width:980px){
+    width: 193%;
+    font-size: 31px;
+  }
+  @media all and (max-width: 769px){
+
+  width: 153%;
+    font-size: 26px;
+  }
+  @media all and (max-width: 640px){
+    width: 215%;
+    font-size: 23px;
+  }
+ 
 `;
 const Span = styled.span`
   color: rgb(15, 167, 111);
+  font-weight:700;
 `;
 
 const P = styled.p`
@@ -102,12 +163,23 @@ const P = styled.p`
   width: 90%;
   line-height: 1.3em;
   margin-bottom: 40px;
+
+  @media all and (max-width:980px){
+    width: 166%;
+  }
+  @media all and (max-width:640px){
+    width: 238%;
+  }
 `;
 
 const Divitem = styled.div`
   margin-bottom: 25px;
   width: 80%;
   align-items: center;
+
+  @media all and (max-width:980px){
+    width: 100%;
+  }
 `;
 
 const Imgone = styled.img`
@@ -118,15 +190,24 @@ const Largediv = styled.div`
   display: flex;
   align-items: center;
   margin-top: 30px;
+  @media all and (max-width:640px){
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    margin-left: 207px;
+  }
+
 `;
-const Divlist = styled.div``;
+const Divlist = styled(Link)``;
 const Button = styled.button`
   cursor: pointer;
   margin-right: 30px;
   color: rgb(255, 255, 255);
   font-size: 18px;
-  width: 238px;
-  height: 70px;
+  width: 208px;
+  height: 59px;
   display: flex;
   justify-content: center;
   border: none;
@@ -140,36 +221,66 @@ const Button = styled.button`
     rgb(24, 152, 175) 51%,
     rgb(99, 187, 76) 100%
   );
+
+
+  @media all and (max-width:640px){
+   margin-bottom: 30px;
+  }
+  @media all and (max-width:420px){
+    width: 197px;
+margin-right: 134px;
+  }
+  @media all and (max-width: 360px){
+    width: 188px;
+  }
+  
 `;
 // const Buttonone=styled.button`
 // padding:3px;`;
 // ;
-const Divbutton = styled.div`
-  border: 2px solid transparent;
-  border-image: linear-gradient(
+const Divbutton = styled(Link)`
+  background: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  color: rgb(32, 156, 165);
+  text-align: center;
+`;
+const Small = styled.small`
+  color: rgb(32, 156, 165);
+  /* margin-top: 14px; */
+  width: 118px;
+  margin: 0 auto;
+  @media all and (max-width: 640px){
+    width: 166px;
+  }
+`;
+
+const Divlistone = styled.div`
+  border-radius: 10px;
+  background-image: linear-gradient(
     to right,
     rgb(99, 187, 76) 0%,
     rgb(24, 152, 175) 51%,
     rgb(99, 187, 76) 100%
   );
-  border-image-slice: 1;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  color: rgb(32, 156, 165);
-  padding: 2px;
-  width: 242px;
-  height: 60px;
-  text-align: center;
-`;
-const Small = styled.small`
-  color: rgb(32, 156, 165);
-  margin-top: 14px;
-`;
+  padding: 3px;
+  width: 216px;
+  cursor: pointer;
 
-const Divlistone = styled.div`
-  border-radius: 10px;
+  @media all and (max-width:640px){
+  margin-left: 0;
+  }
+  @media all and (max-width:420px){
+  margin-right: 112px;
+  }
+  @media all and (max-width:360px){
+  margin-right: 174px;
+  }
 `;
 const P1 = styled.p`
   color: rgb(32, 156, 165);
@@ -178,28 +289,51 @@ const P1 = styled.p`
   font-weight: 400;
 `;
 const Rightdiv = styled.div`
-width:100%;
-position:relative;`;
+  width: 100%;
+  position: relative;
+
+  @media all and (max-width:980px){
+    margin-top: 30px;
+  }
+`;
 const Imagediv = styled.div`
- transform: rotate(2deg);
- overflow: hidden;
+  transform: rotate(4deg);
+  overflow: hidden;
 `;
 const Picture = styled.img`
-width:100%;
-display:block;
-border-radius:10px`;
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+`;
 
 const Pic = styled.img`
-  width:38%;
+  width: 33%;
   position: absolute;
   z-index: 1;
-  top: 250px;
-    left: -113px;
-    `;
+  top: 272px;
+  left: -113px;
+
+  @media all and (max-width:1280px){
+    top: 207px;
+    left: -71px;
+  }
+  @media all and (max-width:1280px){
+    display: none;
+  }
+`;
 const Googlediv = styled.div`
   width: 62%;
-    margin: 0 auto;
-    margin-top: 6%;
+  margin: 0 auto;
+  margin-top: -1%;
+  margin-left: 180px;
+  @media all and (max-width:420px){
+    width: 86%;
+    margin-left:105px;
+  }
+
 `;
 const Google = styled.img`
-width:33%;`;
+  width: 41%;
+  margin-top: 36px;
+  cursor: pointer;
+`;

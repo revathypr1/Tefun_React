@@ -5,6 +5,8 @@ import small from "../../assests/images/small.svg";
 import Ig from "../../assests/images/640.svg";
 import Drop from "../../assests/images/down-arrow.svg";
 import PlayImage from "../../assests/images/play-lock.svg";
+import "../../App.css"
+import ScreenHeader from "../includes/ScreenHeader";
 
 export default function Videos() {
   const [selectedId, setSelectedId] = useState("");

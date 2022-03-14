@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import icon from "../../assests/images/Set.svg";
+import ScreenHeader from "../includes/ScreenHeader";
 
 export default function Time() {
   const [hour, setHour] = useState(3);
@@ -69,8 +70,24 @@ const MainDiv = styled.div`
   border: 1px solid #e6e6e6;
   width: 90%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 138px;
   background: #fef6f9;
+
+  /* @media all and (max-width: 640px){
+    width: 121%;
+  margin: 118px  80px auto;
+  } */
+  @media all and (max-width: 640px){
+    width: 97%;
+
+  margin: 0 auto;
+  
+  margin-top: 118px;
+  }
+  @media all and (max-width: 420px){
+  width: 98%;
+
+  }
 `;
 const LeftDiv = styled.div`
   display: flex;
@@ -90,10 +107,17 @@ const Heading = styled.h3`
   margin-left: 19px;
   color: #707387;
   font-weight: 800;
+  @media all and (max-width: 420px){
+  margin-left: 10px;
+}
 `;
 const RightDiv = styled.div`
   border-left: 1px solid #e6e6e6;
   margin-right: 20px;
+@media all and (max-width: 420px){
+  margin-right: -9px;
+}
+  
 `;
 const TopDiv = styled.div``;
 const Paragraph = styled.p`

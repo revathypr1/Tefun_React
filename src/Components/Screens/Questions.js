@@ -92,6 +92,11 @@ const Small = styled.div`
 `;
 const DivList = styled.div`
   padding: 51px 101px;
+@media all and (max-width: 980px){
+  margin-top: 36px;
+  padding: 0 0;
+}
+ 
 `;
 const DivItem = styled.div`
   min-height: 75px;
@@ -127,6 +132,10 @@ const P = styled.p`
   &.active .drop {
     transform: rotate(180deg);
   }
+  @media all and (max-width: 640px){
+    padding:0 0 0 0;
+    }
+
 `;
 const Span = styled.span`
   display: block;
@@ -147,6 +156,10 @@ const Question = styled.div`
 
 const Drop = styled.div`
   padding: 0 35px 3px 366px;
+
+  @media all and (max-width: 769px){
+    padding: 0 0 0 0;
+  }
 `;
 const Answer = styled.p`
   font-size: 18px;

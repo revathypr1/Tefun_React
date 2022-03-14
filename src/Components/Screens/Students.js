@@ -52,6 +52,9 @@ export default function Students() {
 
 const MainDiv=styled.div`
 padding: 50px 59px;
+ @media all and (max-width: 2800px){
+     margin-top: 30px;
+ }
 `;
 const DivItem=styled.div``;
 const H1=styled.h1`
@@ -59,13 +62,21 @@ color: rgb(15, 167, 111); ;
 `;
 const H2=styled.h2`
 color: #000;
-font-size:40px;`;
+font-size:40px;
+@media all and  (max-width: 460px){
+    font-size: 28px;
+}
+`;
 const DivList=styled.div`
     margin-top: 30px;
     display: flex;
     position: relative;
     -webkit-box-pack: justify;
     justify-content: space-between;
+
+    @media all and (max-width: 980px){
+        flex-wrap: wrap;
+    }
 `;
 const LeftDiv=styled.div`
     width: 52%;
@@ -98,6 +109,16 @@ margin-bottom: 20px;
     border-radius: 20px;
     position: relative;
     background: rgb(254, 247, 236);
+
+    @media all and (max-width: 980px){
+        width:100%
+    }
+    @media all and (max-width: 980px){
+        width:202%
+    }
+    @media all and (max-width: 360px){
+       width: 239%;
+    }
 `;
 const H3=styled.h3`
    
@@ -135,5 +156,9 @@ width: 95%;
 `;
 const Img=styled.img`
 width:100%;
-display:block;`;
+display:block;
+@media all and (max-width: 980px){
+        display: none;
+    }
+`;
 
